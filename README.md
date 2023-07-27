@@ -9,4 +9,4 @@ This is an official implementation of E2EVAP in our ISPRS 2023 paper [E2EVAP: En
 ## Citation
 If you use E2EVAP in your research, please cite the following paper:{}
 ## Getting Started
-The E2EvAP is being prepared for publication, and we will make source code available for reproducibiliy and benchmarking purposes here as soon as possible.
+The E2EVAP is being prepared for publication, and we will make source code available for reproducibiliy and benchmarking purposes here as soon as possible.
