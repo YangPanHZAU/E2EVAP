@@ -43,7 +43,7 @@ python scripts/pre_for_test.py
 ```
 
 ### Evaluate Model
-#### 1. download pretrained weight in this [link](https://github.com/Z-Zheng/FarSeg/releases/download/v1.0/farseg50.pth)
+#### 1. download pretrained weight in this [link](https://drive.google.com/file/d/16IYHK63KKdv8VEOQiaw9uSSSavBfNkjT/view?usp=sharing)
 
 #### 2. test the model
 ```bash
