@@ -22,4 +22,34 @@ author = {Yang Pan and Xinyu Wang and Liangpei Zhang and Yanfei Zhong},
 }
 ```
 ## Getting Started
-The E2EVAP is being prepared for publication, and we will make source code available for reproducibiliy and benchmarking purposes here as soon as possible.
+
+Environment reference：<a href="https://github.com/zhang-tao-whu/e2ec/blob/main/INSTALL.md">E2EC</a>
+
+### Prepare iflytek parcel Dataset
+
+- Dataset download
+  
+All images can be download from the <a href="https://github.com/zhaozhen2333/iFLYTEK2021">top1 solution from iFLYTEK Challenge 2021</a>
+
+- Dataset split
+  
+for training/valiate dataset, we follow cropping and split strategy from <a href="https://github.com/zhaozhen2333/iFLYTEK2021/blob/main/out_shp/train/pre_for_train.py">top1 solution from iFLYTEK Challenge 2021</a> 
+
+for test dataset, we use same cropping strategy as for training but the images smaller than 512*512 are dropped.
+
+```bash
+python scripts/pre_for_train.py
+python scripts/pre_for_test.py
+```
+
+### Evaluate Model
+#### 1. download pretrained weight in this [link](https://github.com/Z-Zheng/FarSeg/releases/download/v1.0/farseg50.pth)
+
+#### 2. test the model
+```bash
+python test.py dla34_e2evap_ifly_parcel_test --checkpoint /xxxx/ckpt_ifly.pth --eval segm --device 0
+```
+### ToDO list
+- training code
+- visualizaiton code
+- overlap inference on large size remote sensing imagery
