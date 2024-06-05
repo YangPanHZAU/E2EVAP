@@ -61,7 +61,7 @@ The parameters patch size and stride can be adjusted according to the extraction
 
 step2：infer the cutted images
 
-add the metadata information about the cutted images in <a href="https://github.com/YangPanHZAU/E2EVAP/dataset/info.py">dataset/info.py</a> 
+add the metadata information about the cutted images in <a href="https://github.com/YangPanHZAU/E2EVAP/blob/main/dataset/info.py">dataset/info.py</a> 
 
 infer the cutted images
 ```bash

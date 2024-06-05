@@ -1,6 +1,6 @@
 
 class DatasetInfo(object):
-    data_dir_NAIP='/home/py21/data_py/San_joaquin_2014_NAIP/'
+
     data_dir_iFLy = '/home/py21/changguang_parcel/top1_baseline/out_shp/train/512-512/'
     dataset_info = {
         'coco_train': {
@@ -79,24 +79,6 @@ class DatasetInfo(object):
             'name': 'cityscapes',
             'image_dir': 'data/cityscapes/leftImg8bit/test', 
             'anno_dir': 'data/cityscapes/annotations/test', 
-            'split': 'test'
-        },
-        'coco_parcel_NAIP_Train':{
-            'name': 'coco_parcel',
-            'image_dir': data_dir_NAIP+'train_coco',
-            'anno_dir': data_dir_NAIP+'San_joaquin_2014_NAIP_train.json',
-            'split': 'train'
-        },
-        'coco_parcel_NAIP_Val': {
-            'name': 'coco_parcel',
-            'image_dir': data_dir_NAIP+'valid_coco',
-            'anno_dir': data_dir_NAIP+'San_joaquin_2014_NAIP_valid.json',
-            'split': 'val'
-        },
-        'coco_parcel_NAIP_Test': {
-            'name': 'coco_parcel',
-            'image_dir': data_dir_NAIP+'test_coco',
-            'anno_dir': data_dir_NAIP+'San_joaquin_2014_NAIP_test.json',
             'split': 'test'
         },
         'coco_parcel_iFly_Train': {
