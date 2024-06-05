@@ -49,7 +49,35 @@ python scripts/pre_for_test.py
 ```bash
 python test.py dla34_e2evap_ifly_parcel_test --checkpoint /xxxx/ckpt_ifly.pth --eval segm --device 0
 ```
+
+#### 3. overlapped inference on large size remote sensing imagery
+we follow the similar strategy from <a href="https://github.com/zhaozhen2333/iFLYTEK2021/blob/main/out_shp/inference/single_shp_out.py">top1 solution from iFLYTEK Challenge 2021</a> 
+
+step1：clipping the large size imagery
+```bash
+python overlap_infer/cut_patch.py
+```
+The parameters patch size and stride can be adjusted according to the extraction result.
+
+step2：infer the cutted images
+
+add the metadata information about the cutted images in <a href="https://github.com/YangPanHZAU/E2EVAP/dataset/info.py">dataset/info.py</a> 
+
+infer the cutted images
+```bash
+python overlap_infer/overlap_infer.py e2evap_ifly_parcel_test_CGDZ_8_768 --checkpoint /xxxx/ckpt_ifly.pth --with_nms True --eval segm --device 0
+```
+
+step3：merge the cutted results and converted them into shp format.
+```bash
+python overlap_infer/merge2shp.py
+```
+It is necessary to specify the inferred JSON path(**segm_json**), which is different from the original JSON path(**poi_json_path**).
+The main parameters for post-processing are:
+ **score_thr**, **nms_mode，NMS_iou_thr**
+Result path:
+**shp_single_path**
+
 ### ToDO list
 - training code
 - visualizaiton code
-- overlap inference on large size remote sensing imagery
