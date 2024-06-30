@@ -78,6 +78,28 @@ The main parameters for post-processing are:
 Result path:
 **shp_single_path**
 
-### ToDO list
-- training code
-- visualizaiton code
+
+### Training your Model
+
+preparing the edge of gt
+```bash
+python coco2_edge_mask.py
+```
+
+training the model
+
+python train_net.py dla34_e2evap_ifly_parcel --device 2
+
+Find the best number of epoches on the validation set to evaluate your model.
+
+### Visualization
+
+visualization of ground truth
+```bash
+python vis_coco_gt.py
+```
+
+visualization of predicted result
+```bash
+python vis_coco_pred.py
+```
